@@ -3,9 +3,9 @@
 It provides key information such as MMR, wins/losses, and calculates a player's win percentage.
 
 **Features**
-- Retrieve player leaderboard rank
-- Fetch MMR and match statistics (wins, losses)
-- Calculate and display win percentage
+- Retrieves the Account ID's leaderboard ranking
+- Fetches MMR and match statistics (wins, losses)
+- Calculates and displays it's win percentage
 
 **Usage**
 - Enter an Account ID to retrieve ranking and match statistics.
