@@ -1,0 +1,65 @@
+/* General Styling for the Page: Background Image on Body with Unified Color */
+body {
+  /* The first background layer is the image (positioned at the top center),
+     the second layer is the solid color (#222) that shows behind or after the image */
+  background: url('../img/KeyArtHorizontal.png') no-repeat center top, #222;
+  background-size: cover; /* This makes the image cover the view; adjust as needed */
+  font-family: Arial, sans-serif;
+  color: #FDCB58;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styling: No image here, so the body's background shows through */
+header {
+  text-align: center;
+  padding: 20px;
+  /* No background is applied here—the header is transparent so the body's image shows. */
+  color: #FDCB58;  /* Black text for clear readability */
+  font-size: 24px;
+}
+
+/* Rank & Score Container */
+.rank-score-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+/* Rank & Score Boxes */
+.rank-box, .score-box {
+  background-color: #404040;
+  padding: 15px;
+  border-radius: 10px;
+  width: 40%; /* Consistent sizing */
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #FDCB58;
+}
+
+/* Stats & Streaks Container */
+.stats-container {
+  display: flex;
+  justify-content: center; /* Centers the sections */
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto; /* Centers within page */
+}
+
+/* Stats & Streaks Boxes */
+.stats, .streaks {
+  flex: 1;
+  background-color: #292929;
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 40%;
+  max-width: 400px; /* Uniform sizing */
+  text-align: center;
+}

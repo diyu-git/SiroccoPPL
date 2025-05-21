@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <!-- Header pushes the content down and shows the player's name -->
+    <header>
+      <h1 id="displayName">Player Profile Lookup</h1>
+    </header>
+
+    <main>
+      <!-- Input Section -->
+      <section class="profile-input">
+        <label for="accountInput" style="display:none;">Account ID</label>
+        <input type="text" id="accountInput" placeholder="Enter Account ID">
+        <button onclick="fetchPlayerData()">Get Profile</button>
+      </section>
+
+      <!-- Rank & Score Section -->
+      <div class="rank-score-container">
+        <section class="rank-box">
+          <p>Rank: <span id="rank">-</span></p>
+        </section>
+        <section class="score-box">
+          <p>MMR: <span id="score">-</span></p>
+        </section>
+      </div>
+
+      <!-- Stats & Streaks Section -->
+      <div class="stats-container">
+        <section class="stats">
+          <h2>Stats Overview</h2>
+          <p>Win Percentage: <span id="winPercentage">-</span></p>
+          <p>Total Games: <span id="totalGames">-</span></p>
+          <p>Wins: <span id="wins">-</span></p>
+          <p>Losses: <span id="losses">-</span></p>
+          <p>Draws: <span id="draws">-</span></p>
+        </section>
+
+        <section class="streaks">
+          <h2>Streaks</h2>
+          <p>Current Win Streak: <span id="winStreak">-</span></p>
+          <p>Current Loss Streak: <span id="lossStreak">-</span></p>
+          <p>Max Win Streak: <span id="maxWinStreak">-</span></p>
+          <p>Max Loss Streak: <span id="maxLossStreak">-</span></p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
