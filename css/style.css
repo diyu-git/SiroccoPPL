@@ -63,6 +63,3 @@ header {
   max-width: 400px; /* Uniform sizing */
   text-align: center;
 }
-#draws {
-  text-decoration: line-through;
-}
