@@ -98,3 +98,8 @@ document.getElementById("accountInput").addEventListener("keydown", async functi
     }
 });
 
+// Apply strikethrough to "draws"
+const drawsElement = document.getElementById("draws");
+if (drawsElement) {
+    drawsElement.parentElement.style.textDecoration = "line-through";
+}
