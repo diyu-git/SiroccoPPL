@@ -55,7 +55,7 @@ function updateUI(stats, entry) {
         score: entry?.score ?? "N/A",
         wins: stats?.wins ?? 0,
         losses: stats?.losses ?? 0,
-        draws: `<s>${stats?.draws ?? 0}</s>`,
+        draws: stats?.draws ?? 0,
         totalGames: (stats?.wins ?? 0) + (stats?.losses ?? 0),
         winPercentage: ((stats?.wins ?? 0) / ((stats?.wins ?? 0) + (stats?.losses ?? 0)) * 100).toFixed(2) + "%",
         winStreak: stats?.winStreak ?? 0,
