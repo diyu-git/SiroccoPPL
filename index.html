@@ -15,10 +15,14 @@
 
     <main>
       <!-- Input Section -->
-      <section class="profile-input">
-        <label for="accountInput" style="display:none;">Account ID</label>
-        <input type="text" id="accountInput" placeholder="Enter Account ID">
+      <div class="profile-input">
+        <input type="number" id="accountInput" min="0" inputmode="numeric" aria-label="Enter Account ID" placeholder="Enter Account ID">
         <button onclick="fetchPlayerData()">Get Profile</button>
+      </div>
+
+      <!-- Button to Open Help Modal -->
+      <section class="help-modal-button">
+        <button id="helpButton">Need Help Finding Account ID?</button>
       </section>
 
       <!-- Rank & Score Section -->
@@ -50,6 +54,15 @@
           <p>Max Loss Streak: <span id="maxLossStreak">-</span></p>
         </section>
       </div>
+
+      <!-- Help Modal -->
+      <dialog id="helpModal" class="modal">
+        <button class="close-modal" onclick="closeHelpModal()">×</button>
+        <h2>How to find your Account ID</h2>
+        <img src="./img/AccountIDGuide.png" class="modal-image" alt="Account Id Guide">
+        <button onclick="closeHelpModal()">Close</button>
+      </dialog>
+
     </main>
   </body>
 </html>

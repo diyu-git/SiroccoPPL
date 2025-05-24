@@ -98,6 +98,22 @@ document.getElementById("accountInput").addEventListener("keydown", async functi
     }
 });
 
+// Open help modal
+document.getElementById("helpButton").addEventListener("click", function() {
+  const helpModal = document.getElementById("helpModal");
+  if (helpModal.open) {
+    closeHelpModal();
+  } else {
+    helpModal.showModal();
+  }
+});
+
+// Close help modal
+function closeHelpModal() {
+  const helpModal = document.getElementById("helpModal");
+  helpModal.close();
+}
+
 // Apply strikethrough to "draws"
 const drawsElement = document.getElementById("draws");
 if (drawsElement) {

@@ -63,3 +63,72 @@ header {
   max-width: 400px; /* Uniform sizing */
   text-align: center;
 }
+/* Input Section Styling */
+.profile-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px; /* Adjust this value to control spacing */
+  margin: 10px auto;
+}
+
+.profile-input input {
+  padding: 9px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid #FDCB58;
+  background-color: #292929;
+  color: #FDCB58;
+  outline: none;
+}
+
+.profile-input button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #FDCB58;
+  color: #292929;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.profile-input button:hover {
+  background-color: #e6b14a;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FDCB58;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: #e6b14a;
+}
+
+.modal button:not(.close-modal) {
+  display: block;
+  margin: 10px auto; /* Centers it properly */
+  padding: 1px 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #FDCB58;
+  color: #292929;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal button:not(.close-modal):hover {
+  background-color: #e6b14a;
+}
+
