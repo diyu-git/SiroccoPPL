@@ -12,4 +12,4 @@ It provides key information such as MMR, wins/losses, and calculates a player's 
 - The application will fetch the data from the Sirocco APIs and display key metrics.
 
 **Access**
-SiroccoPPL is served from GitHub Pages at: 🔗 https://diyu-git.github.io/SiroccoPPL/
+- SiroccoPPL is served from GitHub Pages at: 🔗 https://diyu-git.github.io/SiroccoPPL/
