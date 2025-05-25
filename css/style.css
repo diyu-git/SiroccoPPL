@@ -132,3 +132,22 @@ header {
   background-color: #e6b14a;
 }
 
+.modal {
+  width: 90%;
+  max-width: 600px; /* Optional: prevents it from becoming too large */
+  background-color: #292929;
+  color: #FDCB58;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.modal img {
+  width: 100%;
+  height: auto; /* Ensures proportional scaling */
+  display: block;
+  margin: 0 auto;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent overlay */
+}
