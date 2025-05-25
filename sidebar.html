@@ -1,0 +1,18 @@
+<div id="leaderboardSidebar" style="right: -340px;">
+  <button class="refresh-btn" onclick="fetchLeaderboard(true)" title="Refresh"></button>
+  <button class="close-sidebar" onclick="closeSidebar()" title="Close">×</button>
+  <h2>Top 100 Players</h2>
+  <table id="leaderboardTable">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>MMR</th>
+    </tr>
+  </thead>
+  <tbody id="leaderboardList"></tbody>
+</table>
+
+</div>
+
+<button id="toggleSidebar">🏆 View Top 100</button>

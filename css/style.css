@@ -2,13 +2,22 @@
 body {
   /* The first background layer is the image (positioned at the top center),
      the second layer is the solid color (#222) that shows behind or after the image */
-  background: url('../img/KeyArtHorizontal.png') no-repeat center top, #222;
-  background-size: cover; /* This makes the image cover the view; adjust as needed */
+  background: url('../img/KeyArtHorizontal.png') no-repeat center top fixed, #222;
+  background-size: 100vw 100vh; /* Force it to fill the viewport */
+  width: 100vw; /* Ensures it spans the full viewport */
+  height: 100vh; /* Prevents unwanted shifting */
+  overflow-x: hidden;
   font-family: Arial, sans-serif;
   color: #FDCB58;
   text-align: center;
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  width: 100vw; /* Forces full viewport width */
+  min-height: 100vh; /* Ensures full viewport coverage */
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
 }
 
 /* Header Styling: No image here, so the body's background shows through */

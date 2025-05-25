@@ -1,0 +1,104 @@
+#toggleSidebar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #FDCB58;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close-sidebar {
+  position: absolute;
+  top: 10px;
+  right: 1px;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  color: #FDCB58;
+  cursor: pointer;
+}
+.refresh-btn {
+  position: absolute;
+  top: 17px;
+  right: 30px; /* Positions it just left of the close button */
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  background-color: #FDCB58; /* Orange theme */
+  border: none;
+  border-radius: 50%;
+  color: #292929;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+.refresh-btn:hover {
+  background-color: #e6b14a; /* Darker shade on hover */
+}
+
+#leaderboardSidebar {
+  position: fixed;
+  right: -340px; /* Moves it fully off-screen */
+  top: 0;
+  width: 320px;
+  height: 100vh;
+  background-color: #292929;
+  color: #FDCB58;
+  overflow-y: auto;
+  overflow-x: hidden; /* Stops horizontal scrollbar */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  display: block; /* Ensures it's independent */
+}
+/* Adjust table spacing inside the sidebar */
+#leaderboardTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px; /* Adds space between title and table */
+}
+#leaderboardTable th, #leaderboardTable td {
+  padding: 10px;
+  border-bottom: 1px solid #FDCB58;
+  text-align: left;
+  white-space: nowrap;
+}
+#leaderboardTable th {
+  font-weight: bold;
+}
+#leaderboardTable td:nth-child(2) {
+  text-align: left;
+  white-space: nowrap; /* Prevents names from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds "..." for long names */
+  max-width: 180px; /* Slightly wider for readability */
+  font-weight: 500; /* Makes names stand out */
+}
+#leaderboardTable td:nth-child(3) {
+  text-align: center; /* Centers MMR values */
+  font-weight: bold;
+}
+
+/*Scrollbar styling for Firefox */
+#leaderboardSidebar {
+  scrollbar-width: thin; /* Reduces the scrollbar size */
+  scrollbar-color: #FDCB58 #1a1a1a; /* Sets thumb & track colors */
+}
+
+/*Scrollbar styling for Chrome & Edge */
+#leaderboardSidebar::-webkit-scrollbar {
+  width: 6px;
+}
+#leaderboardSidebar::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+#leaderboardSidebar::-webkit-scrollbar-thumb {
+  background: #FDCB58;
+  border-radius: 4px;
+}
+
