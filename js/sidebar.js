@@ -67,9 +67,18 @@ function displayLeaderboard(playerEntries) {
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>#${(player.rank ?? 0) + 1}</td>
-            <td>${player.displayName ?? "Unknown"}</td>
+            <td><a href="?accountId=${player.accountId}" class="player-link">${player.displayName ?? "Unknown"}</a></td>
             <td>${player.score ?? "N/A"}</td>
         `;
+
+        // Add click handler to prevent default navigation and handle profile loading
+        const link = row.querySelector('.player-link');
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById("accountInput").value = player.accountId;
+            fetchPlayerData();
+            closeSidebar(); // Close sidebar after selection
+        });
         leaderboardList.appendChild(row);
     });
 }

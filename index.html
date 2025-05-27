@@ -17,10 +17,18 @@
 
     <main>
       <!-- Input Section -->
-      <div class="profile-input">
-        <input type="number" id="accountInput" min="0" inputmode="numeric" aria-label="Enter Account ID" placeholder="Enter Account ID">
-        <button onclick="fetchPlayerData()">Get Profile</button>
-      </div>
+      <form class="profile-input" onsubmit="fetchPlayerData(); return false;">
+        <input
+          id="accountInput"
+          name="accountId"
+          min="0"
+          inputmode="numeric"
+          aria-label="Enter Account ID"
+          placeholder="Enter Account ID"
+          autocomplete="on"
+        >
+        <button type="submit">Get Profile</button>
+      </form>
 
       <!-- Button to Open Help Modal -->
       <section class="help-modal-button">

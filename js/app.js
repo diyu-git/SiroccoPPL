@@ -1,6 +1,29 @@
 let isFetching = false; // Track request state
 
-async function fetchPlayerData() {
+document.addEventListener('DOMContentLoaded', function() {
+    // Check for accountId in URL parameters on first load
+    const urlParams = new URLSearchParams(window.location.search);
+    const accountId = urlParams.get('accountId');
+    if (accountId) {
+        document.getElementById("accountInput").value = accountId;
+        fetchPlayerData(); // Auto-fetch data if accountId is present
+    }
+});
+
+window.addEventListener('popstate', function(event) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const accountId = urlParams.get('accountId');
+    const accountInput = document.getElementById("accountInput");
+
+    if (accountId) {
+        accountInput.value = accountId;
+        fetchPlayerData(true);
+    } else {
+        accountInput.value = '';
+    }
+});
+
+async function fetchPlayerData(fromPopState = false) {
     if (isFetching) return; // Prevent multiple requests
 
     const accountId = document.getElementById("accountInput").value.trim();
@@ -23,6 +46,14 @@ async function fetchPlayerData() {
         ]);
 
         updateUI(statsRes.stats, entryRes.entry);
+
+        const newUrl = new URL(window.location);
+        newUrl.searchParams.set('accountId', accountId);
+
+        // Only update the browser history if not triggered by browser back/forward navigation
+        if(!fromPopState) {
+            window.history.pushState({}, '', newUrl);
+        }
     } catch (error) {
         console.warn("Error fetching player data:", error);
         showError("Failed to load profile data. Please check the Account ID.");
@@ -51,7 +82,7 @@ async function fetchJson(url) {
 function updateUI(stats, entry) {
     const profileData = {
         displayName: entry?.displayName || "Unknown Player",
-        rank: entry?.rank ?? "N/A",
+        rank: entry?.rank !== undefined ? entry.rank + 1 : "N/A",
         score: entry?.score ?? "N/A",
         wins: stats?.wins ?? 0,
         losses: stats?.losses ?? 0,
@@ -63,6 +94,8 @@ function updateUI(stats, entry) {
         maxWinStreak: stats?.maxWinStreak ?? 0,
         maxLossStreak: stats?.maxLossStreak ?? 0
     };
+
+    document.title = `${profileData.displayName} - Player Profile`;
 
     Object.entries(profileData).forEach(([key, value]) => {
         document.getElementById(key).innerText = value;
