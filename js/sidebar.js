@@ -85,7 +85,7 @@ async function fetchLeaderboard(forceRefresh = false) {
     }
 
     // Otherwise, perform the API request.
-    const response = await fetch("https://prod01.platform.impl.lunchboxentertainmentapps.com/api/v1/leaderboards/MMR");
+    const response = await fetch("https://prod01.platform.impl.lunchboxentertainmentapps.com/api/v1/leaderboards/by-type/MMR");
 
     if (!response.ok) {
       console.error(`API request failed: ${response.status} ${response.statusText}`);
